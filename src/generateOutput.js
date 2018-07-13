@@ -26,6 +26,12 @@ function generateOutput(result) {
     }, team[0].name)
   }
 
+  // No battles fought
+  if (result.battleLog.length === 0) {
+    return `No battles
+Not enough Transformers to fight!`
+  }
+
   // Super battle!
   if (result.hadSuperBattle === true) {
     return `There was a super battle!
