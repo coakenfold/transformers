@@ -1,0 +1,28 @@
+.TeamInput {
+  margin: 20px 0;
+}
+.TeamInput__input {
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+}
+.TeamInput__group {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.TeamInput__hint {
+  margin: 0 0 0 20px;
+  width: 60%;
+}
+.TeamInput__input-container {
+  width: 40%;
+}
+.TeamInput__eg {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.TeamInput__hint-heading {
+  margin-bottom: 0;
+  font-weight: 900;
+}
