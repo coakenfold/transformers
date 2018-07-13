@@ -80,7 +80,7 @@
       "jest/no-disabled-tests": "off",
       "complexity": [
         "error",
-        15
+        20
       ],
       "react/no-did-update-set-state": "off",
       "react/prefer-stateless-function": "off",
