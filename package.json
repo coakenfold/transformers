@@ -1,0 +1,73 @@
+{
+  "name": "transformers",
+  "version": "1.0.0",
+  "description": "Part 2: Transformers",
+  "repository": "https://github.com/coakenfold/transformers.git",
+  "author": "Chad Oakenfold <web@oakenfold.ca> (https://oakenfold.ca/)",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start-server": "json-server --watch ./src/server/db.json --port 3001",
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage",
+    "lint": "eslint . --cache --cache-location node_modules/.cache/eslint",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.4",
+    "json-server": "^0.14.0",
+    "lint-staged": "^7.2.0",
+    "nodemon": "^1.17.5",
+    "prettier": "^1.13.5"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/!(README).+(md|css|json)": [
+        "prettier --write",
+        "git add"
+      ],
+      "**/+(src|test)/**/*.js": [
+        "prettier --write",
+        "eslint --cache --cache-location node_modules/.cache/eslint",
+        "git add"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "require-await": "off",
+      "import/prefer-default-export": "off",
+      "import/no-unassigned-import": "off",
+      "no-console": "warn",
+      "no-nested-ternary": "off",
+      "jest/no-disabled-tests": "off",
+      "complexity": [
+        "error",
+        15
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "build",
+    "dist",
+    "coverage"
+  ]
+}
