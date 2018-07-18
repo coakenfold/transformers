@@ -53,3 +53,11 @@
 .TeamInput__submit[disabled] {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 600px) {
+  .TeamInput__main {
+    padding: 5px;
+    width: 100%;
+    height: auto;
+  }
+}

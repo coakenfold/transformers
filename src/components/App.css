@@ -61,20 +61,16 @@ textarea {
   width: 600px;
   height: 716px;
   position: relative;
-
-  transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-[data-state='flipped'] .card {
-  transform: rotateY(180deg);
+[data-state='outcome'] .card__side--input {
+  opacity: 0;
+  top: -716px;
 }
 
 .card__side {
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  transform: perspective(400px);
   border-radius: 6px;
   background: #fff;
   display: flex;
@@ -85,8 +81,13 @@ textarea {
   left: 0;
 }
 
-.card__side--back {
-  transform: rotateY(180deg);
+.card__side--input {
+  z-index: 1;
+  transition: opacity 0.4s ease-in, top 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.card__side--outcome {
+  z-index: 0;
 }
 
 .container {
@@ -96,7 +97,6 @@ textarea {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  perspective: 800px;
 }
 
 .credits {
@@ -123,4 +123,31 @@ textarea {
   border-bottom: 1px solid #e7e7e7;
   display: block;
   margin: 0 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .credits {
+    display: none;
+  }
+  .background {
+    display: none;
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  .card__side {
+    position: relative;
+  }
+  .card__side--outcome {
+    display: none;
+    height: auto;
+  }
+  [data-state='outcome'] .card__side--outcome {
+    display: block;
+  }
+  [data-state='outcome'] .card__side--input {
+    display: none;
+  }
 }

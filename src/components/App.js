@@ -36,21 +36,21 @@ class App extends React.Component {
     const result = battles.battle()
 
     const output = generateOutput(result)
-    this.setState({ output, card: 'flipped' })
+    this.setState({ output, card: 'outcome' })
   }
   render() {
     return (
       <div className="App">
         <div className="container" data-state={this.state.card}>
           <div className="card">
-            <div className="card__side">
+            <div className="card__side card__side--input">
               <TeamInput
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 input={this.state.input}
               />
             </div>
-            <div className="card__side card__side--back">
+            <div className="card__side card__side--outcome">
               <BattleOutput
                 handleRematch={this.handleRematch}
                 output={this.state.output}
