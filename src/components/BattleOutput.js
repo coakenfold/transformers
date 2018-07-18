@@ -1,22 +1,27 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
+import style from './BattleOutput.css'
 
-function Output(props) {
-  if (props.text !== '') {
-    return (
-      <div>
-        <h2 className="heading-2">Battle Results!</h2>
-        <pre className="BattleOutput">{props.text}</pre>
-      </div>
-    )
-  }
-  return null
-}
 class BattleOutput extends React.Component {
   constructor(props) {
     super(props)
   }
   render() {
-    return <Output text={this.props.output} />
+    return (
+      <div className="BattleOutput">
+        <div className="BattleOutput__main">
+          <h2 className="heading-2">Battle Results!</h2>
+          <pre className="BattleOutput__results">{this.props.output}</pre>
+        </div>
+
+        <button
+          className="BattleOutput__rematch"
+          onClick={this.props.handleRematch}
+        >
+          REMATCH!
+        </button>
+      </div>
+    )
   }
 }
 
