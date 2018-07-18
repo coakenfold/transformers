@@ -10,7 +10,7 @@ class BattleOutput extends React.Component {
     return (
       <div className="BattleOutput">
         <div className="BattleOutput__main">
-          <h2 className="heading-2">Battle Results!</h2>
+          <h2 className="heading">Battle Results!</h2>
           <pre className="BattleOutput__results">{this.props.output}</pre>
         </div>
 

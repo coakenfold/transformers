@@ -14,7 +14,7 @@ class TeamInput extends React.Component {
         onSubmit={this.props.handleSubmit}
       >
         <div className="TeamInput__main">
-          <label className="heading-2" htmlFor="TeamInput__input">
+          <label className="heading" htmlFor="TeamInput__input">
             Create Teams
           </label>
 
